@@ -1,100 +1,95 @@
 @import "../styles.scss";
-.wrapper {
-}
 .header {
   &-top {
     background-color: $mainColor;
     padding: 24px 0;
     color: $textColor;
     font-family: $fontStyle;
-  }
-}
-.header-top__container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-.header-menu {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  font-weight: 600;
-  line-height: 19.36px;
-  @media (max-width: $mobile) {
-    gap: 20px;
-  }
-}
-.header__logo {
-}
-.header__nav {
-  ul {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    li:hover {
-      cursor: pointer;
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
-    @media (max-width: $mobile) {
-      gap: 15px;
+    &__menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      font-weight: 600;
+      line-height: 19.36px;
+      @media (max-width: $mobile) {
+        gap: 20px;
+      }
+    }
+    &__nav {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        li:hover {
+          cursor: pointer;
+        }
+        @media (max-width: $mobile) {
+          gap: 15px;
+        }
+      }
+    }
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      font-weight: 500;
+      line-height: 19.36px;
+      @media (max-width: $mobile) {
+        gap: 10px;
+      }
+    }
+    &__phone {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../assets/phone.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 28px;
+        height: 28px;
+        top: -5px;
+        left: -30px;
+      }
+    }
+    &__marked {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../assets/marked.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 28px;
+        height: 28px;
+      }
+    }
+    &__card {
+      position: relative;
+      padding: 14px 20px 14px 58px;
+      border: 1px solid $yellowColor;
+      border-radius: 50px;
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../assets/basket.svg");
+        background-repeat: no-repeat;
+        width: 28px;
+        height: 28px;
+        top: 9px;
+        left: 15px;
+      }
     }
   }
 }
-.menu__item {
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  font-weight: 500;
-  line-height: 19.36px;
-  @media (max-width: $mobile) {
-    gap: 10px;
-  }
-}
-.header__phone {
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    background-image: url("../assets/phone.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 28px;
-    height: 28px;
-    top: -5px;
-    left: -30px;
-  }
-}
-.header__marked {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  &::before {
-    content: "";
-    position: absolute;
-    background-image: url("../assets/marked.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 28px;
-    height: 28px;
-  }
-}
-.header__card {
-  position: relative;
-  padding: 14px 20px 14px 58px;
-  border: 1px solid $yellowColor;
-  border-radius: 50px;
-  &::before {
-    content: "";
-    position: absolute;
-    background-image: url("../assets/basket.svg");
-    background-repeat: no-repeat;
-    width: 28px;
-    height: 28px;
-    top: 9px;
-    left: 15px;
-  }
-}
+
 // ===========
 .header-bottom {
   padding: 15px 0;
@@ -198,8 +193,4 @@
     }
   }
 }
-
-.header-bottom__item {
-}
-.header-bottom {
-}
+// ===========
