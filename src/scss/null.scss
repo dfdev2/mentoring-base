@@ -1,4 +1,4 @@
-@import "./main.scss";
+@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 * {
   padding: 0px;
@@ -23,13 +23,12 @@ a:active {
 html,
 body {
   height: 100%;
-  min-width: $minWidth + px;
+  min-width: 320px;
 }
 body {
   line-height: 1;
-  // font-family: $fontFamily;
-  font-size: $fontSize;
-  //text-rendering: optimizeLegibility;
+  font-family: "Inter, sans-serif";
+  font-size: 16px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

@@ -1,2 +1,20 @@
 @import "./scss/null.scss";
-// ==============
+// main Styles =====
+$mainColor: #4b565e;
+$yellowColor: #f0ba4e;
+$textColor: #fff;
+$darkColor: #3c3c3b;
+$widthContent: 1320px;
+$maxContent: 1920px;
+$newColor: #08c785;
+$discountColor: #fa5d69;
+$fontStyle: "Inter";
+$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767.98px; // Телефоны L
+$mobileSmall: 479.98px; // Телефоны S
+// =================
+.container {
+  max-width: $widthContent;
+  margin: 0 auto;
+  padding: 0 15px;
+}
