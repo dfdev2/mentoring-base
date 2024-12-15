@@ -282,13 +282,14 @@
   grid-template-areas:
     "spray emals paints"
     "spray foams sockets";
-  grid-template-rows: 200px 200px; /* Высота строк */
-  grid-template-columns: 420px 420px 420px; /* Ширина колонок */
-  gap: 25px; /* Расстояние между элементами */
+  grid-template-rows: 200px 200px;
+  grid-template-columns: 420px 420px 420px;
+  gap: 25px;
   font-family: $fontStyle;
   padding: 0 0 30px 0;
 
   // .products-cards__item
+
   &__item {
     padding: 15px 15px 0 15px;
     max-width: 421px;
@@ -370,6 +371,7 @@
       padding: 0 0 25px 65px;
     }
   }
+
   // .products-card__content
 
   &__content {
@@ -392,9 +394,6 @@
   &__image {
     display: flex;
     max-width: 60%;
-    img {
-      // margin-left: -10%;
-    }
   }
 
   // .products-card__link
@@ -418,5 +417,220 @@
       top: -10px;
       right: -50px;
     }
+  }
+}
+// ============
+
+.popular {
+  padding: 0px 0px 30px 0px;
+
+  &-container {
+    position: relative;
+  }
+
+  &-slide {
+    &__left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 10px;
+    }
+    &__right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      right: -15px;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 10px;
+    }
+  }
+  // .popular__top
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px 30px 0px;
+  }
+
+  // .popular__title
+
+  &__title {
+    font-family: $fontStyle;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+  }
+
+  // .popular__more
+
+  &__more {
+    font-family: $fontStyle;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    color: $yellowColor;
+  }
+
+  // .popular__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    max-width: 310px;
+    padding: 24px;
+    font-family: $fontStyle;
+    font-weight: 500;
+    line-height: 19.36px;
+    box-shadow: 0px 20px 50px 0px #12112714;
+    margin: 0 auto;
+  }
+}
+.popular-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 25px;
+  // .popular-card__image
+
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 10px 0px;
+  }
+
+  // .popular-card__discount
+
+  &__discount {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    background-color: $discountColor;
+    color: $textColor;
+    padding: 10px 20px;
+    border-radius: 60px;
+    display: none;
+    &.discount {
+      display: block;
+    }
+  }
+
+  &__new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    background-color: $newColor;
+    border-radius: 60px;
+    color: $textColor;
+    display: none;
+    &.new {
+      display: block;
+    }
+  }
+
+  // .popular-card__matked
+
+  &__matked {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  // .popular-card__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  // .popular-card__subtitle
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+  }
+
+  // .popular-card__price-title
+
+  &__price-title {
+    display: flex;
+    flex-direction: column;
+    .popular-card__unit {
+      color: #a1a0a0;
+    }
+  }
+
+  // .popular-card__prices
+
+  &__prices {
+    display: flex;
+    align-items: end;
+    column-gap: 15px;
+  }
+
+  // .popular-card__old-price
+
+  &__old-price {
+    text-decoration: line-through;
+  }
+
+  // .popular-card__new-price
+
+  &__new-price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+  }
+
+  // .popular-card__quantitys
+
+  &__quantitys {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .popular-card__quantity
+
+  &__quantity {
+    display: flex;
+    flex-direction: column;
+    // row-gap: 5px;
+  }
+
+  // .popular-card__quantity-block
+  &__quantity-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  // .popular-card__quantity-title
+
+  &__quantity-title {
+    display: block;
+    min-width: 100%;
+  }
+
+  // .popular-card__to-cart
+
+  &__to-cart {
+    border: 1px solid $yellowColor;
+    border-radius: 54px;
+    padding: 14px 20px;
   }
 }
