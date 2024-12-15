@@ -1,4 +1,8 @@
 @import "../styles.scss";
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 .header {
   &-top {
     background-color: $mainColor;
@@ -194,3 +198,71 @@
   }
 }
 // ===========
+.main {
+  background-image: url("../assets/main-bg.jpg");
+  background-repeat: no-repeat;
+  height: 720px;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+  }
+  &-title {
+    color: $yellowColor;
+    font-family: $fontStyle;
+    max-width: 400px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+  }
+}
+// =========
+.info {
+  padding: 25px 0;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    flex: 33.333%;
+    column-gap: 25px;
+    @media (max-width: $tablet) {
+      column-gap: 10px;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+  &-card {
+    flex: 1 1 0;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: $fontStyle;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    @media (max-width: $tablet) {
+      padding: 2px;
+      gap: 10px;
+    }
+  }
+  &-assortment {
+    strong {
+      display: block;
+    }
+  }
+  &-text {
+  }
+  &-text__subtitle {
+    font-weight: 600;
+  }
+  &-delivery {
+    strong {
+      display: block;
+    }
+  }
+  &-like {
+  }
+}

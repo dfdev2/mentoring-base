@@ -17,4 +17,8 @@ $mobileSmall: 479.98px; // Телефоны S
   max-width: $widthContent;
   margin: 0 auto;
   padding: 0 15px;
+  // border: 1px solid green;
+  @media (max-width: $tablet) {
+    padding: 0 10px;
+  }
 }
