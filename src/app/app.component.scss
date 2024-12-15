@@ -237,7 +237,6 @@
     flex: 1 1 0;
     padding: 5px;
     display: flex;
-    align-items: center;
     gap: 15px;
     font-family: $fontStyle;
     font-size: 18px;
@@ -253,8 +252,7 @@
       display: block;
     }
   }
-  &-text {
-  }
+
   &-text__subtitle {
     font-weight: 600;
   }
@@ -263,6 +261,5 @@
       display: block;
     }
   }
-  &-like {
-  }
 }
+// ==========
