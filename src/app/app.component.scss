@@ -1,15 +1,10 @@
 @import "../styles.scss";
-.wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding-bottom: 400px;
-}
+
 .header {
   &-top {
     background-color: $mainColor;
     padding: 24px 0;
     color: $textColor;
-    font-family: $fontStyle;
     &__container {
       display: flex;
       justify-content: space-between;
@@ -100,7 +95,6 @@
   padding: 15px 0;
   background-color: $yellowColor;
   color: $darkColor;
-  font-family: $fontStyle;
   font-size: 14px;
   font-weight: 600;
   line-height: 16.94px;
@@ -211,7 +205,6 @@
   }
   &-title {
     color: $yellowColor;
-    font-family: $fontStyle;
     max-width: 400px;
     font-size: 40px;
     font-weight: 700;
@@ -224,22 +217,13 @@
   &-container {
     display: flex;
     justify-content: space-between;
-    flex: 33.333%;
-    column-gap: 25px;
-    @media (max-width: $tablet) {
-      column-gap: 10px;
-    }
-    @media (max-width: $mobile) {
-      flex-direction: column;
-      row-gap: 10px;
-    }
+    @include adaptiveValue("column-gap", 25, 10, 1320, 1200, 1);
   }
   &-card {
     flex: 1 1 0;
     padding: 5px;
     display: flex;
     gap: 15px;
-    font-family: $fontStyle;
     font-size: 18px;
     font-weight: 400;
     line-height: 21.78px;
@@ -255,7 +239,9 @@
   }
 
   &-text__subtitle {
-    font-weight: 600;
+    strong {
+      font-weight: 700;
+    }
   }
   &-delivery {
     strong {
@@ -269,7 +255,6 @@
   justify-content: end;
   column-gap: 15px;
   padding: 15px 0;
-  font-family: $fontStyle;
   font-size: 16px;
   font-weight: 600;
   color: #a1a0a0;
@@ -285,7 +270,6 @@
   grid-template-rows: 200px 200px;
   grid-template-columns: 420px 420px 420px;
   gap: 25px;
-  font-family: $fontStyle;
   padding: 0 0 30px 0;
 
   // .products-cards__item
@@ -383,7 +367,6 @@
   // .products-card__title
 
   &__title {
-    font-family: $fontStyle;
     font-size: 28px;
     font-weight: 600;
     line-height: 33.89px;
@@ -422,7 +405,7 @@
 // ============
 
 .popular {
-  padding: 0px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
 
   &-container {
     position: relative;
@@ -467,7 +450,6 @@
   // .popular__title
 
   &__title {
-    font-family: $fontStyle;
     font-size: 28px;
     font-weight: 500;
     line-height: 33.89px;
@@ -476,7 +458,6 @@
   // .popular__more
 
   &__more {
-    font-family: $fontStyle;
     font-size: 18px;
     font-weight: 600;
     line-height: 21.78px;
@@ -490,7 +471,6 @@
     flex-direction: column;
     max-width: 310px;
     padding: 24px;
-    font-family: $fontStyle;
     font-weight: 500;
     line-height: 19.36px;
     box-shadow: 0px 20px 50px 0px #12112714;
@@ -633,4 +613,117 @@
     border-radius: 54px;
     padding: 14px 20px;
   }
+}
+// ===========
+.names {
+  padding: 30px 0px 30px 0px;
+  // .names-container
+
+  &-container {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-content {
+    padding: 28px 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  // .names__title
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.89px;
+    margin-bottom: 16px;
+  }
+
+  // .names__text
+
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+  }
+
+  // .names__link
+
+  &__link {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    color: $yellowColor;
+  }
+
+  // .names__image
+
+  &__image {
+  }
+}
+// ===========
+.footer {
+  // .footer__logo
+
+  &__logo {
+  }
+
+  // .footer__contact
+
+  &__contact {
+  }
+
+  // .footer__phone
+
+  &__phone {
+  }
+
+  // .footer__phone-name
+
+  &__phone-name {
+  }
+
+  // .footer__phone-number
+
+  &__phone-number {
+  }
+
+  // .footer__emails
+
+  &__emails {
+  }
+
+  // .footer__emails-name
+
+  &__emails-name {
+  }
+
+  // .footer__email-adres
+
+  &__email-adres {
+  }
+
+  // .footer__menu
+
+  &__menu {
+  }
+
+  // .footer__socials
+
+  &__socials {
+  }
+
+  // .footer__social
+
+  &__social {
+  }
+}
+.footer-contacts {
+}
+.facebook {
+}
+.youtube {
+}
+.we-chat {
 }
