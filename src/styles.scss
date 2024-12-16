@@ -45,7 +45,6 @@ $pc: em(
   grid-template-rows: auto 1fr auto;
   position: relative;
   overflow-x: hidden;
-  padding-bottom: 400px;
 }
 // =================
 // Тип адаптива:
@@ -60,7 +59,6 @@ $responsiveType: 1;
       max-width: rem($maxWidthContainer);
       box-sizing: content-box;
       margin: 0 auto;
-      border: 1px solid green;
     }
     @if ($containerPadding>0) {
       padding: 0 rem(math.div($containerPadding, 2));
