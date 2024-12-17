@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="header-top">
+    <div class="header-top__container container">
+      <div class="header-top__menu">
+        <div class="header__logo">
+          <img src="../assets/logo.svg" alt="Logo" />
+        </div>
+        <nav class="header-top__nav">
+          <ul>
+            <li class="menu__item" *ngFor="let item of topMenuList">
+              {{item}}
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-top__actions">
+        <a href="tel:+4367761012527" class="header-top__phone"
+          >+4367761012527</a
+        >
+        <a href="#" class="header-top__marked"></a>
+        <a href="#" class="header-top__card">
+          <span>Empty</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <div class="container header-bottom__container">
+      <nav class="header-bottom__menu">
+        <ul>
+          <li class="header-bottom__item"></li>
+          <li class="header-bottom__item" *ngFor="let item of bottomMenuList">
+            {{item}}
+          </li>
+        </ul>
+      </nav>
+      <div class="header-bottom__search-map">
+        <div class="header-bottom__search">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search, for example, Cleaning circle"
+          />
+          <button></button>
+        </div>
+        <div class="header-bottom__location">Vienna</div>
+      </div>
+    </div>
+  </div>
+</header>

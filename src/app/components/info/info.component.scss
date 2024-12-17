@@ -1,0 +1,38 @@
+@import "../../../styles.scss";
+.info {
+  padding: 25px 0;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValue("column-gap", 25, 10, 1320, 1200, 1);
+  }
+  &-card {
+    flex: 1 1 0;
+    padding: 5px;
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    @media (max-width: $tablet) {
+      padding: 2px;
+      gap: 10px;
+    }
+  }
+  &-assortment {
+    strong {
+      display: block;
+    }
+  }
+
+  &-text__subtitle {
+    strong {
+      font-weight: 700;
+    }
+  }
+  &-delivery {
+    strong {
+      display: block;
+    }
+  }
+}
