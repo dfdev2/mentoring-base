@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 const bottomMenuList: string[] = [
   'Catalog',
@@ -13,7 +13,7 @@ const bottomMenuList: string[] = [
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -22,10 +22,11 @@ export class HeaderComponent {
   readonly topMenuList: string[] = ['Home', 'About', 'Catalog'];
   readonly AboutTheCompany: string = 'About the company';
   companyShow: boolean = true;
+
   //  bottom Header
   menuListChanged: string[] = bottomMenuList;
   isUpperCase: boolean = true;
-  changeButtonText = 'To Upper';
+  changeButtonText: string = 'To Upper';
   buttonText: string = 'Hide';
 
   companyShowFunc = (name: string) => {

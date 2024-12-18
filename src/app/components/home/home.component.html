@@ -1,0 +1,17 @@
+<div class="show-img">
+  <div class="container">
+    <button (click)="showImgFunc()">{{ imgBtn }} Image</button>
+    <button (click)="showMainFunc()">{{ mainBtn }} Main</button>
+  </div>
+</div>
+<main class="main" *ngIf="showMain">
+  <img src="../assets/main-bg.jpg" alt="Image" *ngIf="showImg" />
+  <div class="main-container container">
+    <h1 class="main-title">A tool for your business</h1>
+  </div>
+</main>
+<app-info></app-info>
+<app-products></app-products>
+<app-popular></app-popular>
+<app-names></app-names>
+<app-new-popular></app-new-popular>

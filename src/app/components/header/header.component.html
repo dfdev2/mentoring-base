@@ -18,7 +18,8 @@
                 {{ buttonText }}
               </button>
             </li>
-            <li *ngIf="companyShow">{{ AboutTheCompany }}</li>
+            <li routerLink="/" *ngIf="companyShow">{{ AboutTheCompany }}</li>
+            <li><a routerLink="/users">Users</a></li>
           </ul>
         </nav>
       </div>

@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+.users {
+  // .users_list
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem(20) 0;
+    gap: 5px;
+  }
+}
+.container {
+}
+.user {
+  border: 1px solid black;
+  padding: rem(5);
+  width: rem(220);
+  // .user_name
+
+  &_name {
+  }
+}
