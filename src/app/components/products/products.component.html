@@ -1,11 +1,9 @@
 <section class="products">
   <div class="products-container container">
     <div class="products-pigination">
-      <span class="active">1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
+      <button type="button" class="active" *ngFor="let i of pagesPagination">
+        {{ i }}
+      </button>
     </div>
     <ul class="products-cards">
       <!-- Spray -->

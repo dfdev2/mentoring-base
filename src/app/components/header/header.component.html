@@ -8,8 +8,17 @@
         <nav class="header-top__nav">
           <ul>
             <li class="menu__item" *ngFor="let item of topMenuList">
-              {{item}}
+              {{ item }}
             </li>
+            <li>
+              <button
+                class="is-show-header"
+                (click)="companyShowFunc(AboutTheCompany)"
+              >
+                {{ buttonText }}
+              </button>
+            </li>
+            <li *ngIf="companyShow">{{ AboutTheCompany }}</li>
           </ul>
         </nav>
       </div>
@@ -29,9 +38,12 @@
       <nav class="header-bottom__menu">
         <ul>
           <li class="header-bottom__item"></li>
-          <li class="header-bottom__item" *ngFor="let item of bottomMenuList">
-            {{item}}
+          <li class="header-bottom__item" *ngFor="let item of menuListChanged">
+            {{ item }}
           </li>
+          <button type="button" class="is-show-header" (click)="changeText()">
+            {{ changeButtonText }}
+          </button>
         </ul>
       </nav>
       <div class="header-bottom__search-map">

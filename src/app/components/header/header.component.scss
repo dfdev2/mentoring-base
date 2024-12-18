@@ -1,5 +1,11 @@
 @import "../../../styles.scss";
-
+.is-show-header {
+  background-color: green;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+// =======
 .header {
   &-top {
     background-color: $mainColor;

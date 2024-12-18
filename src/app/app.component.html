@@ -1,22 +1,21 @@
 <div class="wrapper">
   <app-header></app-header>
-
-  <!-- Main -->
-  <main class="main">
+  <!--  -->
+  <div class="show-img container">
+    <button (click)="showImgFunc()">{{ imgBtn }} Image</button>
+    <button (click)="showMainFunc()">{{ mainBtn }} Main</button>
+  </div>
+  <!--  -->
+  <main class="main" *ngIf="showMain">
+    <img src="../assets/main-bg.jpg" alt="Image" *ngIf="showImg" />
     <div class="main-container container">
       <h1 class="main-title">A tool for your business</h1>
     </div>
   </main>
-  <!--  -->
   <app-info></app-info>
-  <!--  -->
   <app-products></app-products>
-  <!--  -->
   <app-popular></app-popular>
-  <!--  -->
   <app-names></app-names>
-  <!--  -->
   <app-new-popular></app-new-popular>
-  <!--  -->
   <app-footer></app-footer>
 </div>
