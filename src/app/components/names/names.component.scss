@@ -1,7 +1,6 @@
 @import "../../../styles.scss";
 .names {
   padding: 30px 0px 30px 0px;
-  // .names-container
 
   &-container {
     background-color: #f6f6f6;
@@ -15,7 +14,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  // .names__title
 
   &__title {
     font-size: 28px;
@@ -24,25 +22,16 @@
     margin-bottom: 16px;
   }
 
-  // .names__text
-
   &__text {
     font-size: 20px;
     font-weight: 400;
     line-height: 24.2px;
   }
 
-  // .names__link
-
   &__link {
     font-size: 18px;
     font-weight: 600;
     line-height: 21.78px;
     color: $yellowColor;
-  }
-
-  // .names__image
-
-  &__image {
   }
 }

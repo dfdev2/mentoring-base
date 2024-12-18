@@ -8,20 +8,14 @@
     border-bottom: 1px solid #566169;
   }
 
-  // .footer__container
-
   &__container {
     display: flex;
     justify-content: space-between;
   }
 
-  // .footer__logo
-
   &__logo {
     margin-bottom: rem(32);
   }
-
-  // .footer__contacts
 
   &__contacts {
     display: flex;
@@ -30,13 +24,10 @@
     padding: 0 0 rem(50) 0;
     border-right: 1px solid #566169;
   }
-  // .footer__contact
 
   &__contact {
     display: flex;
   }
-
-  // .footer__phone
 
   &__phone {
     padding: 0 0 0 rem(30);
@@ -45,8 +36,6 @@
     row-gap: rem(8);
     margin: 0 rem(88) 0 0;
   }
-
-  // .footer__phone-name
 
   &__phone-name {
     position: relative;
@@ -66,14 +55,10 @@
     }
   }
 
-  // .footer__phone-number
-
   &__phone-number {
     display: flex;
     flex-direction: column;
   }
-
-  // .footer__emails
 
   &__emails {
     padding: 0 0 0 rem(30);
@@ -81,8 +66,6 @@
     flex-direction: column;
     row-gap: rem(8);
   }
-
-  // .footer__emails-name
 
   &__emails-name {
     position: relative;
@@ -102,14 +85,11 @@
     }
   }
 
-  // .footer-bottom__ask
-
   &__ask {
     flex: 1 1 0;
     padding: rem(34) 0 0 0;
   }
 
-  // .footer-bottom
   &-bottom {
     padding: rem(34) 0 0 0;
     &__container {
@@ -117,13 +97,10 @@
       justify-content: space-between;
     }
 
-    // .footer-bottom__right
-
     &__right {
       display: flex;
       align-items: end;
     }
-    // .footer-bottom___menu
 
     &__menu {
       width: rem(250);
@@ -132,8 +109,6 @@
         justify-content: space-between;
       }
     }
-
-    // .footer-bottom___socials
 
     &__socials {
       padding: rem(35) 0 0 0;
@@ -147,7 +122,6 @@
   &__content {
     padding: 0 0 0 rem(100);
   }
-  // .ask__title
 
   &__title {
     font-size: 18px;
@@ -156,16 +130,12 @@
     margin: 0 0 rem(10) 0;
   }
 
-  // .ask__text
-
   &__text {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     margin: 0 0 rem(30) 0;
   }
-
-  // .ask__form
 
   &__form {
     display: flex;

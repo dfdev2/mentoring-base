@@ -34,7 +34,6 @@
       padding: 10px;
     }
   }
-  // .popular__top
 
   &__top {
     display: flex;
@@ -42,15 +41,11 @@
     padding: 30px 0px 30px 0px;
   }
 
-  // .popular__title
-
   &__title {
     font-size: 28px;
     font-weight: 500;
     line-height: 33.89px;
   }
-
-  // .popular__more
 
   &__more {
     font-size: 18px;
@@ -58,8 +53,6 @@
     line-height: 21.78px;
     color: $yellowColor;
   }
-
-  // .popular__item
 
   &__item {
     display: flex;
@@ -76,7 +69,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 25px;
-  // .popular-card__image
 
   &__image {
     position: relative;
@@ -84,8 +76,6 @@
     justify-content: center;
     margin: 0px 0px 10px 0px;
   }
-
-  // .popular-card__discount
 
   &__discount {
     position: absolute;
@@ -116,15 +106,11 @@
     }
   }
 
-  // .popular-card__matked
-
   &__matked {
     position: absolute;
     top: 0;
     right: 0;
   }
-
-  // .popular-card__content
 
   &__content {
     display: flex;
@@ -132,15 +118,11 @@
     row-gap: 8px;
   }
 
-  // .popular-card__subtitle
-
   &__subtitle {
     font-size: 20px;
     font-weight: 600;
     line-height: 24.2px;
   }
-
-  // .popular-card__price-title
 
   &__price-title {
     display: flex;
@@ -150,21 +132,15 @@
     }
   }
 
-  // .popular-card__prices
-
   &__prices {
     display: flex;
     align-items: end;
     column-gap: 15px;
   }
 
-  // .popular-card__old-price
-
   &__old-price {
     text-decoration: line-through;
   }
-
-  // .popular-card__new-price
 
   &__new-price {
     font-size: 20px;
@@ -172,36 +148,26 @@
     line-height: 24.2px;
   }
 
-  // .popular-card__quantitys
-
   &__quantitys {
     display: flex;
     justify-content: space-between;
   }
 
-  // .popular-card__quantity
-
   &__quantity {
     display: flex;
     flex-direction: column;
-    // row-gap: 5px;
   }
 
-  // .popular-card__quantity-block
   &__quantity-block {
     display: flex;
     justify-content: space-between;
     padding: 5px;
   }
 
-  // .popular-card__quantity-title
-
   &__quantity-title {
     display: block;
     min-width: 100%;
   }
-
-  // .popular-card__to-cart
 
   &__to-cart {
     border: 1px solid $yellowColor;
