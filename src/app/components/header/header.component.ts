@@ -15,7 +15,7 @@ export class HeaderComponent {
   topMenuList: TopMenuList[] = [
     { name: 'Home', link: '' },
     { name: 'Users', link: '/users' },
-    { name: 'Catalog', link: 'catalog' },
+    { name: 'About', link: '' },
   ];
   readonly AboutTheCompany: string = 'About the company';
   companyShow: boolean = true;
