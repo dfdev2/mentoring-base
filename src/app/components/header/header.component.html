@@ -7,19 +7,9 @@
         </div>
         <nav class="header-top__nav">
           <ul>
-            <li class="menu__item" *ngFor="let item of topMenuList">
-              {{ item }}
+            <li *ngFor="let itemLink of topMenuList">
+              <a [routerLink]="itemLink.link">{{ itemLink.name }}</a>
             </li>
-            <li>
-              <button
-                class="is-show-header"
-                (click)="companyShowFunc(AboutTheCompany)"
-              >
-                {{ buttonText }}
-              </button>
-            </li>
-            <li routerLink="/" *ngIf="companyShow">{{ AboutTheCompany }}</li>
-            <li><a routerLink="/users">Users</a></li>
           </ul>
         </nav>
       </div>
@@ -38,7 +28,7 @@
     <div class="container header-bottom__container">
       <nav class="header-bottom__menu">
         <ul>
-          <li class="header-bottom__item"></li>
+          <span class="header-bottom__item"></span>
           <li class="header-bottom__item" *ngFor="let item of menuListChanged">
             {{ item }}
           </li>

@@ -1,14 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-
-const bottomMenuList: string[] = [
-  'Catalog',
-  'Building materials',
-  'Tools',
-  'Electricity',
-  'Interior and clothing',
-];
+import { TopMenuList } from '../../interfaces/topMenuList.interface';
 
 @Component({
   selector: 'app-header',
@@ -19,28 +12,29 @@ const bottomMenuList: string[] = [
 })
 export class HeaderComponent {
   //  top Header
-  readonly topMenuList: string[] = ['Home', 'About', 'Catalog'];
+  topMenuList: TopMenuList[] = [
+    { name: 'Home', link: '' },
+    { name: 'Users', link: '/users' },
+    { name: 'Catalog', link: 'catalog' },
+  ];
   readonly AboutTheCompany: string = 'About the company';
   companyShow: boolean = true;
+  bottomMenuList: string[] = [
+    'Catalog',
+    'Building materials',
+    'Tools',
+    'Electricity',
+    'Interior and clothing',
+  ];
 
   //  bottom Header
-  menuListChanged: string[] = bottomMenuList;
+  menuListChanged: string[] = this.bottomMenuList;
   isUpperCase: boolean = true;
   changeButtonText: string = 'To Upper';
   buttonText: string = 'Hide';
 
-  companyShowFunc = (name: string) => {
-    this.companyShow = !this.companyShow;
-    if (!this.companyShow) {
-      this.buttonText = 'Show';
-    } else {
-      this.buttonText = 'Hide';
-    }
-    return name;
-  };
-
   changeText = () => {
-    this.menuListChanged = bottomMenuList.map((item) =>
+    this.menuListChanged = this.bottomMenuList.map((item) =>
       this.isUpperCase ? item.toLocaleUpperCase() : item.toLocaleLowerCase()
     );
     this.isUpperCase = !this.isUpperCase;

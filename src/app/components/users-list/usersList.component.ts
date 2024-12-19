@@ -18,7 +18,10 @@ export class UsersListComponent {
   constructor() {
     this.apiService.get<User[]>(this.APIURL).subscribe((response) => {
       this.usersList = response;
-      console.log(response);
     });
   }
+
+  delUser = (id: number) => {
+    this.usersList = this.usersList.filter((item) => item.id !== id);
+  };
 }
