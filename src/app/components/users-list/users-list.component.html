@@ -1,10 +1,10 @@
 <div class="users">
   <div class="container">
     <ul class="users_list">
-      <li *ngFor="let item of usersList">
+      <li *ngFor="let item of users">
         <app-user-card
           [userItem]="item"
-          (deleteUser)="delUser(item.id)"
+          (deleteUser)="deleteUser($event)"
         ></app-user-card>
       </li>
     </ul>

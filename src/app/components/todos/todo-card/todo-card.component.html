@@ -16,5 +16,7 @@
       <span style="color: red">No</span>
     </ng-template>
   </div>
-  <button class="todo__button" (click)="onDeleteTodo()">Delete Todo</button>
+  <button class="todo__button" (click)="onDeleteTodo(todoItem.id)">
+    Delete Todo
+  </button>
 </div>

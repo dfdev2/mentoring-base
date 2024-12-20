@@ -4,7 +4,7 @@
       <li *ngFor="let todoItem of todosList">
         <app-todo
           [todoItem]="todoItem"
-          (deleteTodo)="delTodo(todoItem.id)"
+          (deleteTodo)="deleteTodo($event)"
         ></app-todo>
       </li>
     </ul>

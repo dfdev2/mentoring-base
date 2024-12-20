@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from '../../../interfaces/user.interface';
 
 @Component({
   selector: 'app-user-card',
@@ -9,12 +10,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class UserCardComponent {
   @Input()
-  userItem: any;
+  userItem!: User;
 
   @Output()
   deleteUser = new EventEmitter();
 
-  onDeleteUser() {
-    this.deleteUser.emit();
+  onDeleteUser(userId: number) {
+    this.deleteUser.emit(userId);
   }
 }
