@@ -1,0 +1,9 @@
+<div class="user">
+  <strong class="user__name"
+    >{{ userItem.name }} - id: {{ userItem.id }}</strong
+  >
+  <a [href]="userItem.email">{{ userItem.email }}</a>
+  <a [href]="userItem.website">{{ userItem.website }}</a>
+  <p>{{ userItem.company.name }}</p>
+  <button (click)="onDeleteUser()" class="user_button">Dellete User</button>
+</div>

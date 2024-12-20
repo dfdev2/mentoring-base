@@ -1,0 +1,20 @@
+<div class="todo">
+  <div class="todo__task">
+    <h4 class="todo__title">Text of Tasks:</h4>
+    <span>{{ todoItem.title }}</span>
+  </div>
+
+  <div class="todo__autor">
+    <p class="todo__title">Author of the Task:</p>
+    <p class="todo__user">{{ todoItem.userId }}</p>
+  </div>
+
+  <div class="todo__complated">
+    <span class="todo__title">Task completed: </span>
+    <span style="color: green" *ngIf="todoItem.completed; else not"> Yes</span>
+    <ng-template #not>
+      <span style="color: red">No</span>
+    </ng-template>
+  </div>
+  <button class="todo__button" (click)="onDeleteTodo()">Delete Todo</button>
+</div>

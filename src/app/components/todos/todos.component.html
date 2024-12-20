@@ -1,0 +1,12 @@
+<div class="todos">
+  <div class="container">
+    <ul class="todos__list">
+      <li *ngFor="let todoItem of todosList">
+        <app-todo
+          [todoItem]="todoItem"
+          (deleteTodo)="delTodo(todoItem.id)"
+        ></app-todo>
+      </li>
+    </ul>
+  </div>
+</div>

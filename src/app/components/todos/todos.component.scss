@@ -1,0 +1,10 @@
+.todos {
+  padding: 20px 0;
+  // .todo__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

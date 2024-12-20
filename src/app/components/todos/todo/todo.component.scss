@@ -1,0 +1,53 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 0;
+  height: 210px;
+  width: 250px;
+  gap: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+
+  // .todo__title
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  // .todo__task
+
+  &__task {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    line-height: 20px;
+  }
+
+  // .todo__autor
+
+  &__autor {
+  }
+
+  // .todo__user
+
+  &__user {
+    display: block;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  // .todo__comp
+
+  &__comp {
+  }
+  &__button {
+    background-color: blue;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 15px;
+    padding: 5px;
+  }
+}

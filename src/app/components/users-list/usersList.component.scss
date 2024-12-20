@@ -1,30 +1,11 @@
 @import "../../../styles.scss";
-
 .users {
-  padding: rem(20) 0;
+  padding: 20px 0;
   &_list {
     display: flex;
-    justify-content: center;
-    @include adaptiveValue("width", 1320, 320);
     flex-wrap: wrap;
+    @include adaptiveValue("width", 1320, 320);
     padding: rem(20) 0;
-    gap: 5px;
-  }
-}
-
-.user {
-  border: 1px solid black;
-  padding: rem(10);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 25px;
-  @include adaptiveValue("width", 260, 240);
-  &_button {
-    background-color: blue;
-    color: #fff;
-    font-weight: 700;
-    border-radius: rem(15);
-    padding: rem(5);
+    gap: 15px;
   }
 }

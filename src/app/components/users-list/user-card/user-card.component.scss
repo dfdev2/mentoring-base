@@ -1,0 +1,25 @@
+@import "../../../../styles.scss";
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid black;
+  box-shadow: 0px 5px 5px 0px #2e2925;
+  border-radius: rem(10);
+  padding: rem(10);
+  @include adaptiveValue("width", 250, 240);
+  height: 240px;
+  &_list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(25);
+  }
+  &_button {
+    background-color: blue;
+    color: #fff;
+    font-weight: 700;
+    border-radius: rem(15);
+    padding: rem(5);
+  }
+}

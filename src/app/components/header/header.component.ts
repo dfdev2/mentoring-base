@@ -1,12 +1,12 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TopMenuList } from '../../interfaces/topMenuList.interface';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -15,7 +15,7 @@ export class HeaderComponent {
   topMenuList: TopMenuList[] = [
     { name: 'Home', link: '' },
     { name: 'Users', link: '/users' },
-    { name: 'About', link: '' },
+    { name: 'Todos', link: 'todos' },
   ];
   readonly AboutTheCompany: string = 'About the company';
   companyShow: boolean = true;
