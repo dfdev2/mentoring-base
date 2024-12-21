@@ -1,7 +1,7 @@
 <div class="todos">
   <div class="container">
     <ul class="todos__list">
-      <li *ngFor="let todoItem of todosList">
+      <li *ngFor="let todoItem of todosServices.todosSubject$ | async">
         <app-todo
           [todoItem]="todoItem"
           (deleteTodo)="deleteTodo($event)"

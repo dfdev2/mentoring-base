@@ -1,7 +1,7 @@
 <div class="users">
   <div class="container">
     <ul class="users_list">
-      <li *ngFor="let item of users">
+      <li *ngFor="let item of usersService.usersSubject$ | async">
         <app-user-card
           [userItem]="item"
           (deleteUser)="deleteUser($event)"
