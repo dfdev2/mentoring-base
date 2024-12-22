@@ -1,11 +1,17 @@
 @import "../../../styles.scss";
 .users {
-  padding: 20px 0;
+  padding: rem(20) 0;
   &_list {
     display: flex;
     flex-wrap: wrap;
     @include adaptiveValue("width", 1320, 320);
     padding: rem(20) 0;
-    gap: 15px;
+    gap: rem(10);
   }
+}
+.create-user {
+  border: 1px solid black;
+  border-radius: rem(10);
+  padding: rem(20) rem(10);
+  width: rem(400);
 }

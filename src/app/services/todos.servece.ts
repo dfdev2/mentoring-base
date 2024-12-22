@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 export class TodosService {
   // это относится к RXJS реактивная переменная
   todosSubject$ = new BehaviorSubject<Todo[]>([]);
+  todos$ = this.todosSubject$.asObservable();
 
   setTodos(todos: Todo[]) {
     // next типо заменяет =
@@ -26,6 +27,7 @@ export class TodosService {
 
   createTodo(todo: Todo) {
     this.todosSubject$.next([...this.todosSubject$.value, todo]);
+    alert('New Todo added successfully');
   }
 
   deleteTodo(id: number) {

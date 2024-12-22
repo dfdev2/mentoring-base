@@ -1,9 +1,23 @@
+@import "../../../styles.scss";
 .todos {
   padding: 20px 0;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
   }
+}
+.create-todo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 20px 10px;
+  width: 400px;
+  border-radius: rem(10);
 }

@@ -1,5 +1,10 @@
 <div class="users">
   <div class="container">
+    <div class="create-user">
+      <app-create-user-form
+        (createUser)="createUser($event)"
+      ></app-create-user-form>
+    </div>
     <ul class="users_list">
       <li *ngFor="let item of usersService.usersSubject$ | async">
         <app-user-card

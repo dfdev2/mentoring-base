@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()" class="create-task__form">
+  <div class="create-task__name">
+    <label for=""
+      >Autor the task:
+      <span
+        *ngIf="
+          form.controls['userId'].invalid &&
+          (form.controls['userId'].dirty || form.controls['userId'].touched)
+        "
+        class="alert"
+        >Autor is not valid</span
+      >
+    </label>
+    <input type="text" formControlName="userId" />
+  </div>
+
+  <div class="create-task__name">
+    <label for=""
+      >Text of task:
+      <span
+        *ngIf="
+          form.controls['title'].invalid &&
+          (form.controls['title'].dirty || form.controls['title'].touched)
+        "
+        class="alert"
+        >Text is not valid</span
+      >
+    </label>
+    <textarea type="text" formControlName="title"></textarea>
+  </div>
+
+  <div class="create-task__complated">
+    <label for="">Complated: </label>
+    <input type="checkbox" formControlName="completed" />
+  </div>
+
+  <div class="create-task__button">
+    <app-form-button
+      type="submit"
+      buttonText="Create Task"
+      [disabled]="form.invalid"
+    ></app-form-button>
+  </div>
+</form>

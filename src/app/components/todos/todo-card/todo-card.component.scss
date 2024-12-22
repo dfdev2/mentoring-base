@@ -1,28 +1,27 @@
+@import "../../../../styles.scss";
+
 .todo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1 0;
-  height: 210px;
-  width: 250px;
-  gap: 10px;
+  height: rem(210);
+  width: rem(250);
+  gap: rem(10);
   border: 1px solid black;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: rem(10);
+  padding: rem(5);
 
   &__title {
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: rem(5);
   }
 
   &__task {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
-    line-height: 20px;
-  }
-
-  &__autor {
+    line-height: rem(20);
   }
 
   &__user {
@@ -31,13 +30,11 @@
     font-weight: 500;
   }
 
-  &__comp {
-  }
   &__button {
     background-color: blue;
     color: #fff;
     font-weight: 700;
-    border-radius: 15px;
-    padding: 5px;
+    border-radius: rem(10);
+    padding: rem(5);
   }
 }
