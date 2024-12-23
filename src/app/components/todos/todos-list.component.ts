@@ -19,7 +19,6 @@ export class TodosListComponent {
   readonly todosServices = inject(TodosService);
 
   constructor() {
-    // Получение данных с сервера через todosApiServer
     this.todoApiService.getTodos().subscribe((response: Todo[]) => {
       this.todosServices.setTodos(response.slice(0, 6));
     });
@@ -30,7 +29,6 @@ export class TodosListComponent {
   };
 
   public createTodo(formData: Todo) {
-    // Передача данных в сервисы createTodo
     this.todosServices.createTodo({
       completed: formData.completed,
       id: new Date().getTime(),

@@ -19,21 +19,16 @@ export class UsersListComponent {
   readonly usersService = inject(UsersService);
 
   constructor() {
-    // Получение данных с сервера через usersApiServer
     this.usersApiService.getUsers().subscribe((response: User[]) => {
       this.usersService.setUsers(response);
     });
-    // Подписались на изменения в массиве userService.users$
-    this.usersService.users$.subscribe((users) => console.log(users));
   }
 
   public deleteUser(id: number) {
-    // передача ID в сервисы deleteUser
     this.usersService.deleteUser(id);
   }
 
   public createUser(formData: User) {
-    // передача данных в сервисы createUser
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InfoComponent } from '../info/info.component';
 import { ProductsComponent } from '../products/products.component';
 import { PopularComponent } from '../popular/popular.component';
@@ -19,6 +19,7 @@ import { NgIf } from '@angular/common';
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
   showImg: boolean = true;

@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TopMenuList } from '../../interfaces/topMenuList.interface';
 
@@ -9,9 +9,9 @@ import { TopMenuList } from '../../interfaces/topMenuList.interface';
   imports: [NgFor, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  //  top Header
   topMenuList: TopMenuList[] = [
     { name: 'Home', link: '' },
     { name: 'Users', link: '/users' },
@@ -27,7 +27,6 @@ export class HeaderComponent {
     'Interior and clothing',
   ];
 
-  //  bottom Header
   menuListChanged: string[] = this.bottomMenuList;
   isUpperCase: boolean = true;
   changeButtonText: string = 'To Upper';

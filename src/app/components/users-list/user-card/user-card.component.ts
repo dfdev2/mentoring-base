@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { User } from '../../../interfaces/user.interface';
 
 @Component({
@@ -7,6 +13,7 @@ import { User } from '../../../interfaces/user.interface';
   imports: [],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCardComponent {
   @Input()

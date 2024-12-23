@@ -1,5 +1,11 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Todo } from '../../../interfaces/todo.interface';
 
 @Component({
@@ -8,6 +14,7 @@ import { Todo } from '../../../interfaces/todo.interface';
   imports: [NgIf],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoCardComponent {
   @Input()

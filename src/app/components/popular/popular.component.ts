@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Products } from '../../interfaces/products.interface';
 
 @Component({
@@ -8,6 +8,7 @@ import { Products } from '../../interfaces/products.interface';
   imports: [NgFor, NgIf],
   templateUrl: './popular.component.html',
   styleUrl: './popular.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PopularComponent {
   productcard: Products[] = [

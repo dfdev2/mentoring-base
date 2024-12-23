@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -14,19 +19,12 @@ import { NgIf } from '@angular/common';
   imports: [ReactiveFormsModule, FormButtonComponent, NgIf],
   templateUrl: './create-task-form.component.html',
   styleUrl: './create-task-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateTaskFormComponent {
-  // Отправка данных наружу
   @Output()
   createTodo = new EventEmitter();
 
-  //
-  onButtonClick(): void {
-    console.log('Кнопка была нажата!');
-  }
-  //
-
-  // Данные с формы с валидацией
   public form = new FormGroup({
     completed: new FormControl(),
     id: new FormControl(),
