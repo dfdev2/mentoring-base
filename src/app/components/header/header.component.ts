@@ -14,8 +14,9 @@ import { TopMenuList } from '../../interfaces/topMenuList.interface';
 export class HeaderComponent {
   topMenuList: TopMenuList[] = [
     { name: 'Home', link: '' },
-    { name: 'Users', link: '/users' },
+    { name: 'Users', link: 'users' },
     { name: 'Todos', link: 'todos' },
+    { name: 'Mat', link: 'materials' },
   ];
   readonly AboutTheCompany: string = 'About the company';
   companyShow: boolean = true;

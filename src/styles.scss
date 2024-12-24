@@ -1,5 +1,6 @@
 @use "sass:math";
 @import "./scss/mixins.scss";
+// @use "@angular/material" as mat;
 @import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600,700);
 
 // main Styles =====
@@ -92,5 +93,23 @@ $responsiveType: 1;
   }
 }
 // ==============
-
+// @include mat.form-field-overrides(
+//   (
+//     filled-caret-color: orange,
+//     filled-focus-active-indicator-color: red,
+//   )
+// );
+// ==============
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "./scss/null.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

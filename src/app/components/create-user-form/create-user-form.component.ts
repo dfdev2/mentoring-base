@@ -10,12 +10,25 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NgIf } from '@angular/common';
-import { FormButtonComponent } from '../../shared/form-button/form-button.component';
+import { MatFormField, MatInput } from '@angular/material/input';
+import {
+  MatError,
+  MatFormFieldModule,
+  MatLabel,
+} from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-create-user-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, FormButtonComponent],
+  imports: [
+    ReactiveFormsModule,
+    MatInput,
+    MatFormField,
+    MatLabel,
+    MatFormFieldModule,
+    MatIcon,
+    MatError,
+  ],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,6 +1,5 @@
 import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-const newPages: number[] = [5, 4, 3, 2, 1];
 
 @Component({
   selector: 'app-products',
@@ -11,5 +10,5 @@ const newPages: number[] = [5, 4, 3, 2, 1];
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductsComponent {
-  pagesPagination = newPages;
+  newPages: number[] = [5, 4, 3, 2, 1];
 }
