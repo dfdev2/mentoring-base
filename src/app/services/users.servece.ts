@@ -4,12 +4,10 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  // это относится к RXJS реактивная переменная
   usersSubject$ = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject$.asObservable();
 
   setUsers(users: User[]) {
-    // next типо заменяет =
     this.usersSubject$.next(users);
   }
 
@@ -26,8 +24,6 @@ export class UsersService {
   }
 
   createUser(user: User) {
-    // Пробегаемся по массиву если email есть выводим сообшение
-    // такой email уже есть если нет добавляем нового юсера
     const existingUser = this.usersSubject$.value.find(
       (currentElement) => currentElement.email === user.email
     );

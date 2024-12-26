@@ -44,14 +44,15 @@ export class CreateUserFormComponent {
       Validators.required,
       Validators.minLength(4),
     ]),
-    company: new FormControl(null, [
+    companyName: new FormControl(null, [
       Validators.required,
       Validators.minLength(4),
     ]),
   });
 
-  public submitForm() {
+  public submitForm(input: HTMLInputElement) {
     this.createUser.emit(this.form.value);
     this.form.reset();
+    input.blur();
   }
 }

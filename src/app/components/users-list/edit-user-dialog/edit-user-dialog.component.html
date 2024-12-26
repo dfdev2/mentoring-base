@@ -1,31 +1,31 @@
-<form [formGroup]="form" class="flex flex-col gap-2.5">
+<form [formGroup]="form" class="flex flex-col gap-2.5 w-72 p-4">
   <mat-form-field appearance="fill">
     <mat-label>Name:</mat-label>
-    <input #inputElement matInput formControlName="name" />
+    <input matInput formControlName="name" />
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Email:</mat-label>
-    <input #inputElement matInput formControlName="email" />
+    <input matInput formControlName="email" />
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Web Site:</mat-label>
-    <input #inputElement matInput formControlName="website" />
+    <input matInput formControlName="website" />
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Company name:</mat-label>
-    <input #inputElement matInput formControlName="companyName" />
+    <input matInput formControlName="companyName" />
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <button
-    (click)="submitForm(inputElement)"
+    [mat-dialog-close]="userWithUpdatedFields"
     type="submit"
     class="bg-gray-400 py-1 flex justify-center items-center text-white font-black disabled:bg-opacity-20"
     [disabled]="form.invalid"
     mat-stroked-button
   >
-    Create User<mat-icon>add</mat-icon>
+    Edit User <mat-icon> border_color </mat-icon>
   </button>
 </form>

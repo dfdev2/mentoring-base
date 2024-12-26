@@ -5,7 +5,10 @@
   <a [href]="userItem.email">{{ userItem.email }}</a>
   <a [href]="userItem.website">{{ userItem.website }}</a>
   <p>{{ userItem.company.name }}</p>
-  <button (click)="onDeleteUser(userItem.id)" class="user_button">
-    Dellete User
-  </button>
+  <div class="user__buttons">
+    <button (click)="onDeleteUser(userItem.id)" class="user_button">
+      Dellete User
+    </button>
+    <button (click)="openDialog()" class="user_button">Edit User</button>
+  </div>
 </div>

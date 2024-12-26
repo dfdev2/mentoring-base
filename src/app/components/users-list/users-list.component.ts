@@ -5,6 +5,7 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../../services/users.servece';
 import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
+import { CreateUser } from '../../interfaces/createUser.interface';
 
 @Component({
   selector: 'app-users-list',
@@ -28,14 +29,23 @@ export class UsersListComponent {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formData: User) {
+  public editUser(user: CreateUser) {
+    this.usersService.editUser({
+      ...user,
+      company: {
+        name: user.companyName,
+      },
+    });
+  }
+
+  public createUser(formData: CreateUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formData.name,
       email: formData.email,
       website: formData.website,
       company: {
-        name: formData.company.name,
+        name: formData.companyName,
       },
     });
   }

@@ -4,6 +4,7 @@
   &_list {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
     @include adaptiveValue("width", 1320, 320);
     padding: rem(20) 0;
     gap: rem(10);
