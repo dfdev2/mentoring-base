@@ -1,24 +1,24 @@
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { MAT_DIALOG_DATA, MatDialogClose } from "@angular/material/dialog";
-import { MatButton } from "@angular/material/button";
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-} from "@angular/forms";
+} from '@angular/forms';
 import {
   MatError,
   MatFormField,
   MatFormFieldModule,
   MatLabel,
-} from "@angular/material/form-field";
-import { MatIconModule } from "@angular/material/icon";
-import { MatInputModule } from "@angular/material/input";
-import { User } from "../../../interfaces/user.interface";
+} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { User } from '../../../interfaces/user.interface';
 
 @Component({
-  selector: "app-edit-user-dialog",
+  selector: 'app-edit-user-dialog',
   standalone: true,
   imports: [
     MatFormFieldModule,
@@ -29,17 +29,15 @@ import { User } from "../../../interfaces/user.interface";
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatDialogClose, // для закрытия диалога
+    MatDialogClose,
   ],
-  templateUrl: "./edit-user-dialog.component.html",
-  styleUrl: "./edit-user-dialog.component.scss",
+  templateUrl: './edit-user-dialog.component.html',
+  styleUrl: './edit-user-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditUserDialogComponent {
-  // принимаем данные с места открытия модалки
   readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
 
-  // форма для редактирования юзера
   public form = new FormGroup({
     name: new FormControl(this.data.user.name, [
       Validators.required,
@@ -58,8 +56,6 @@ export class EditUserDialogComponent {
       Validators.minLength(4),
     ]),
   });
-  // добавляем id для отправки метод get() работает как переменная
-  // этот метод называется гетер
   get userWithUpdatedFields() {
     return {
       ...this.form.value,

@@ -3,24 +3,24 @@ import {
   Component,
   EventEmitter,
   Output,
-} from "@angular/core";
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-} from "@angular/forms";
-import { MatFormField, MatInput } from "@angular/material/input";
+} from '@angular/forms';
+import { MatFormField, MatInput } from '@angular/material/input';
 import {
   MatError,
   MatFormFieldModule,
   MatLabel,
-} from "@angular/material/form-field";
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatIcon } from "@angular/material/icon";
+} from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: "app-create-task-form",
+  selector: 'app-create-task-form',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -32,18 +32,16 @@ import { MatIcon } from "@angular/material/icon";
     MatIcon,
     MatError,
   ],
-  templateUrl: "./create-task-form.component.html",
-  styleUrl: "./create-task-form.component.scss",
+  templateUrl: './create-task-form.component.html',
+  styleUrl: './create-task-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateTaskFormComponent {
-  // Отправка данных наружу
   @Output()
   createTodo = new EventEmitter();
 
   completed: boolean = false;
 
-  // Данные с формы с валидацией
   public form = new FormGroup({
     completed: new FormControl(this.completed),
     title: new FormControl(null, [
