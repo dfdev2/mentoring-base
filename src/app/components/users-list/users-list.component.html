@@ -1,17 +1,17 @@
 <div class="users">
   <div class="container">
-    <div class="create-user">
-      <app-create-user-form
-        (createUser)="createUser($event)"
-      ></app-create-user-form>
+    <div class="flex justify-center">
+      <button (click)="openUserCreateDialog()" mat-stroked-button class="p-4">
+        Add User
+      </button>
     </div>
-    <ul class="users_list">
+    <ul class="flex justify-center flex-wrap gap-2 pt-6">
       <li *ngFor="let item of usersService.usersSubject$ | async">
+        <!-- на [userItem] отправляем  item для модалки в user-card.ts файле принемаем -->
         <app-user-card
           [userItem]="item"
           (deleteUser)="deleteUser($event)"
-          (editUser)="editUser($event)"
-        ></app-user-card>
+          (editUser)="editUser($event)"></app-user-card>
       </li>
     </ul>
   </div>

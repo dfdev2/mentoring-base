@@ -1,14 +1,27 @@
-<div class="user">
-  <strong class="user__name"
-    >{{ userItem.name }} - id: {{ userItem.id }}</strong
-  >
-  <a [href]="userItem.email">{{ userItem.email }}</a>
-  <a [href]="userItem.website">{{ userItem.website }}</a>
-  <p>{{ userItem.company.name }}</p>
-  <div class="user__buttons">
-    <button (click)="onDeleteUser(userItem.id)" class="user_button">
-      Dellete User
-    </button>
-    <button (click)="openDialog()" class="user_button">Edit User</button>
-  </div>
-</div>
+<mat-card class="card" appearance="outlined">
+  <mat-card-header class="header">
+    <img
+      class="image"
+      mat-card-sm-image
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg" />
+    <mat-card-title-group>
+      <mat-card-title class="title">{{ userItem.name }}</mat-card-title>
+      <mat-card-subtitle
+        ><strong> ID: </strong>{{ userItem.id }}</mat-card-subtitle
+      >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <p><strong> E-Mail: </strong>{{ userItem.email }}</p>
+    <p><strong> Web site: </strong> {{ userItem.website }}</p>
+    <p><strong> Company: </strong> {{ userItem.company.name }}</p>
+    <div class="buttons">
+      <button class="delete" mat-stroked-button (click)="onDeleteUserDialog()">
+        Dellete User
+      </button>
+      <button class="edit" mat-stroked-button (click)="openDialog()">
+        Edit User
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

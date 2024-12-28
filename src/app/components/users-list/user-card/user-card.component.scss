@@ -1,30 +1,43 @@
-@import "../../../../styles.scss";
-.user {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 25px;
-  border: 1px solid black;
-  box-shadow: 0px 5px 5px 0px #2e2925;
-  border-radius: rem(10);
-  padding: rem(10);
-  @include adaptiveValue("width", 250, 240);
   height: 100%;
-  &_list {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: rem(25);
-  }
-  &__buttons {
-    display: flex;
-    gap: 20px;
-  }
-  &_button {
-    background-color: blue;
-    color: #fff;
-    font-weight: 700;
-    border-radius: rem(15);
-    padding: rem(5);
-    width: 100%;
-  }
+  width: 268px;
+}
+.title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.header {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+}
+.image {
+  border-radius: 10px;
+  margin-left: -10px;
+}
+.content {
+  padding: 10px 5px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.delete {
+  background-color: rgb(234, 63, 63);
+  color: #fff;
+  width: 125px;
+}
+.edit {
+  background-color: green;
+  color: #fff;
+  width: 125px;
+}
+button {
 }

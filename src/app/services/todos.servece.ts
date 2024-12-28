@@ -4,10 +4,12 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
+  // это относится к RXJS реактивная переменная
   todosSubject$ = new BehaviorSubject<Todo[]>([]);
   todos$ = this.todosSubject$.asObservable();
 
   setTodos(todos: Todo[]) {
+    // next типо заменяет =
     this.todosSubject$.next(todos);
   }
 

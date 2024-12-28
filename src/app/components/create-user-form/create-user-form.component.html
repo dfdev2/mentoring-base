@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="flex flex-col gap-2.5">
+<form [formGroup]="form" class="flex flex-col gap-2.5 p-4">
   <mat-form-field appearance="fill">
     <mat-label>Name:</mat-label>
     <input #inputElement matInput formControlName="name" />
@@ -6,7 +6,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Email:</mat-label>
-    <input #inputElement matInput formControlName="email" />
+    <input type="email" #inputElement matInput formControlName="email" />
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
@@ -20,12 +20,12 @@
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <button
+    [mat-dialog-close]="form.value"
     (click)="submitForm(inputElement)"
     type="submit"
     class="bg-gray-400 py-1 flex justify-center items-center text-white font-black disabled:bg-opacity-20"
     [disabled]="form.invalid"
-    mat-stroked-button
-  >
+    mat-stroked-button>
     Create User<mat-icon>add</mat-icon>
   </button>
 </form>
