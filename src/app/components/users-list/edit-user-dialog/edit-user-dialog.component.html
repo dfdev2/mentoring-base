@@ -20,6 +20,11 @@
     <mat-error>Not correct</mat-error>
   </mat-form-field>
   <button
+    mat-raised-button
+    #tooltip="matTooltip"
+    matTooltip="Edit user details"
+    [matTooltipPosition]="position.value!"
+    matTooltipHideDelay="1000"
     [mat-dialog-close]="userWithUpdatedFields"
     type="submit"
     class="bg-gray-400 py-1 flex justify-center items-center text-white font-black disabled:bg-opacity-20"

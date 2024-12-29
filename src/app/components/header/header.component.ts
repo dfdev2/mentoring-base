@@ -3,11 +3,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TopMenuList } from '../../interfaces/topMenuList.interface';
 import { TodayDatePipe } from '../pipes/todayDate.pipe';
+import { YellowHover } from '../../directives/yellow-hover.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, RouterLink, TodayDatePipe],
+  imports: [NgFor, RouterLink, TodayDatePipe, YellowHover],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

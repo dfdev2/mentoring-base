@@ -17,6 +17,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { GreenHover } from '../../directives/green-hover.directive';
 
 @Component({
   selector: 'app-users-list',
@@ -27,6 +28,7 @@ import { SnackBarComponent } from '../snack-bar/snack-bar.component';
     AsyncPipe,
     MatDialogModule,
     MatButtonModule,
+    GreenHover,
   ],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',

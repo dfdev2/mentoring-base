@@ -1,4 +1,4 @@
-<mat-card class="card" appearance="outlined">
+<mat-card shadowHover class="card" appearance="outlined">
   <mat-card-header class="header">
     <img
       class="image"
@@ -18,10 +18,15 @@
     <p><strong> Web site: </strong> {{ userItem.website }}</p>
     <p><strong> Company: </strong> {{ userItem.company.name }}</p>
     <div class="buttons">
-      <button class="delete" mat-stroked-button (click)="onDeleteUserDialog()">
+      <button
+        redHover
+        class="delete"
+        mat-stroked-button
+        (click)="onDeleteUserDialog()"
+      >
         Dellete User
       </button>
-      <button class="edit" mat-stroked-button (click)="openDialog()">
+      <button greenHover class="edit" mat-stroked-button (click)="openDialog()">
         Edit User
       </button>
     </div>

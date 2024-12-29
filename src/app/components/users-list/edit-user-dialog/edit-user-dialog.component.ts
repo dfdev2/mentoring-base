@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
 import { MatButton } from '@angular/material/button';
+import { MatTooltipModule, TooltipPosition } from '@angular/material/tooltip';
 import {
   FormControl,
   FormGroup,
@@ -30,6 +31,7 @@ import { User } from '../../../interfaces/user.interface';
     MatInputModule,
     ReactiveFormsModule,
     MatDialogClose,
+    MatTooltipModule,
   ],
   templateUrl: './edit-user-dialog.component.html',
   styleUrl: './edit-user-dialog.component.scss',
@@ -37,6 +39,9 @@ import { User } from '../../../interfaces/user.interface';
 })
 export class EditUserDialogComponent {
   readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
+
+  positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+  position = new FormControl(this.positionOptions[0]);
 
   public form = new FormGroup({
     name: new FormControl(this.data.user.name, [

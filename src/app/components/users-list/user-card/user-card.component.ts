@@ -14,6 +14,11 @@ import { CreateUser } from '../../../interfaces/createUser.interface';
 import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
 import { MatCardModule } from '@angular/material/card';
 import { CleanPhone } from '../../pipes/cleanPhone.pipe';
+import { ShadowHover } from '../../../directives/shadow-hover.directive';
+import { GreenHover } from '../../../directives/green-hover.directive';
+import { RedHover } from '../../../directives/red-hover.directive';
+
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-card',
@@ -24,7 +29,11 @@ import { CleanPhone } from '../../pipes/cleanPhone.pipe';
     MatCardModule,
     MatButtonModule,
     MatButton,
+
     CleanPhone,
+    ShadowHover,
+    GreenHover,
+    RedHover,
   ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
