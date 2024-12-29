@@ -25,7 +25,6 @@ export class TodosService {
 
   createTodo(todo: Todo) {
     this.todosSubject$.next([...this.todosSubject$.value, todo]);
-    alert('New Todo added successfully');
   }
 
   deleteTodo(id: number) {

@@ -1,9 +1,9 @@
 <div class="todos">
   <div class="container todos__container">
-    <app-create-task-form
-      class="create-todo"
-      (createTodo)="createTodo($event)"
-    ></app-create-task-form>
+    <button type="button" mat-stroked-button (click)="openDialog()">
+      Create Task
+    </button>
+
     <ul class="todos__list">
       <li *ngFor="let todoItem of todosServices.todosSubject$ | async">
         <app-todo

@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   Output,
+  inject,
 } from '@angular/core';
 import {
   FormControl,
@@ -18,6 +19,11 @@ import {
 } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIcon } from '@angular/material/icon';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogClose,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-task-form',
@@ -31,6 +37,7 @@ import { MatIcon } from '@angular/material/icon';
     MatCheckboxModule,
     MatIcon,
     MatError,
+    MatDialogClose,
   ],
   templateUrl: './create-task-form.component.html',
   styleUrl: './create-task-form.component.scss',
@@ -58,4 +65,7 @@ export class CreateTaskFormComponent {
     this.createTodo.emit(this.form.value);
     this.form.reset();
   }
+  //==========
+  // readonly dialogRef = inject(MatDialogRef<CreateTaskFormComponent>);
+  // readonly data = inject(MAT_DIALOG_DATA);
 }

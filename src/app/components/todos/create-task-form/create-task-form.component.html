@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="flex flex-col gap-2.5">
+<form [formGroup]="form" class="flex flex-col gap-2.5 p-4 w-80">
   <mat-form-field appearance="fill">
     <mat-label>Autor the task:</mat-label>
     <input matInput formControlName="userId" />
@@ -17,6 +17,7 @@
     ></mat-checkbox>
   </div>
   <button
+    [mat-dialog-close]="form.value"
     type="submit"
     (click)="submitForm()"
     class="bg-gray-400 py-1 flex justify-center items-center text-white font-black disabled:bg-opacity-20"
