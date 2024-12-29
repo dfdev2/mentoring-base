@@ -13,6 +13,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { CreateUser } from '../../../interfaces/createUser.interface';
 import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
 import { MatCardModule } from '@angular/material/card';
+import { CleanPhone } from '../../pipes/cleanPhone.pipe';
 
 @Component({
   selector: 'app-user-card',
@@ -23,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatButtonModule,
     MatButton,
+    CleanPhone,
   ],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',

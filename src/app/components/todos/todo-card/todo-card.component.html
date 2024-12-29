@@ -1,7 +1,7 @@
 <div class="todo">
   <div class="todo__task">
     <h4 class="todo__title">Text of Tasks:</h4>
-    <span>{{ todoItem.title }}</span>
+    <span>{{ todoItem.title | shortTitle : 20 }}</span>
   </div>
 
   <div class="todo__autor">

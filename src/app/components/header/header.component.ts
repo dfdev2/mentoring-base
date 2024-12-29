@@ -2,11 +2,12 @@ import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TopMenuList } from '../../interfaces/topMenuList.interface';
+import { TodayDatePipe } from '../pipes/todayDate.pipe';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, TodayDatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -16,8 +17,9 @@ export class HeaderComponent {
     { name: 'Home', link: '' },
     { name: 'Users', link: 'users' },
     { name: 'Todos', link: 'todos' },
-    { name: 'Mat', link: 'materials' },
+    { name: 'Posts', link: 'posts' },
   ];
+
   readonly AboutTheCompany: string = 'About the company';
   companyShow: boolean = true;
   bottomMenuList: string[] = [

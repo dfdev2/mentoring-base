@@ -3,7 +3,8 @@
     <img
       class="image"
       mat-card-sm-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg" />
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    />
     <mat-card-title-group>
       <mat-card-title class="title">{{ userItem.name }}</mat-card-title>
       <mat-card-subtitle
@@ -12,6 +13,7 @@
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content class="content">
+    <p><strong> Phone: </strong>{{ userItem.address?.zipcode | CleanPhone }}</p>
     <p><strong> E-Mail: </strong>{{ userItem.email }}</p>
     <p><strong> Web site: </strong> {{ userItem.website }}</p>
     <p><strong> Company: </strong> {{ userItem.company.name }}</p>

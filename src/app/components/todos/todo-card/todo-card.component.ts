@@ -7,11 +7,12 @@ import {
   Output,
 } from '@angular/core';
 import { Todo } from '../../../interfaces/todo.interface';
+import { ShortTitle } from '../../pipes/short-title.pipe';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, ShortTitle],
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
