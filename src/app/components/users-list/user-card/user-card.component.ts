@@ -18,8 +18,6 @@ import { ShadowHover } from '../../../directives/shadow-hover.directive';
 import { GreenHover } from '../../../directives/green-hover.directive';
 import { RedHover } from '../../../directives/red-hover.directive';
 
-import { FormControl } from '@angular/forms';
-
 @Component({
   selector: 'app-user-card',
   standalone: true,
