@@ -7,13 +7,54 @@
         </div>
         <nav class="header-top__nav">
           <ul>
-            <li *ngFor="let itemLink of topMenuList">
-              <a [routerLink]="itemLink.link">{{ itemLink.name }}</a>
+            <ng-container *ngFor="let itemLink of topHeaderLinks">
+              <li>
+                <a [routerLink]="itemLink.link">{{ itemLink.name }}</a>
+              </li>
+            </ng-container>
+            <li>
+              <a
+                routerLink="admin"
+                *ngIf="hasAdmin | async"
+                class="bg-red-600 text-white px-5 py-1"
+              >
+                Admin
+              </a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="header-top__time">{{ "mediumDate" | todayDate }}</div>
+      <div class="flex justify-start gap-2 items-center w-52">
+        <button
+          type="button"
+          (click)="logIn()"
+          style="
+            background-color: green;
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-weight: 800;
+          "
+          mat-stroked-button
+        >
+          Log In
+        </button>
+
+        <button
+          *ngIf="hasAdmin | async"
+          type="button"
+          (click)="logout()"
+          style="
+            background-color: green;
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-weight: 800;
+          "
+          mat-stroked-button
+        >
+          Log Out
+        </button>
+      </div>
       <div class="header-top__actions">
         <a href="tel:+4367761012527" class="header-top__phone"
           >+4367761012527</a
@@ -30,12 +71,18 @@
       <nav class="header-bottom__menu">
         <ul>
           <span class="header-bottom__item"></span>
-          <li class="header-bottom__item" *ngFor="let item of menuListChanged">
-            {{ item }}
-          </li>
+          <ng-container *ngFor="let item of menuListChanged">
+            <li class="header-bottom__item">
+              {{ item }}
+            </li>
+          </ng-container>
           <button type="button" class="is-show-header" (click)="changeText()">
             {{ changeButtonText }}
           </button>
+          <span class="text-white font-black text-xl"
+            >You are
+            {{ (hasAdmin | async) === true ? "an Admin" : "a User" }}</span
+          >
         </ul>
       </nav>
       <div class="header-bottom__search-map">
@@ -45,7 +92,7 @@
             name="search"
             placeholder="Search, for example, Cleaning circle"
           />
-          <button></button>
+          <button type="button"></button>
         </div>
         <div class="header-bottom__location">Vienna</div>
       </div>

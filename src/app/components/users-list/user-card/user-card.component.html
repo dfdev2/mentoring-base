@@ -19,6 +19,7 @@
     <p><strong> Company: </strong> {{ userItem.company.name }}</p>
     <div class="buttons">
       <button
+        type="button"
         redHover
         class="delete"
         mat-stroked-button
@@ -26,7 +27,13 @@
       >
         Dellete User
       </button>
-      <button greenHover class="edit" mat-stroked-button (click)="openDialog()">
+      <button
+        type="button"
+        greenHover
+        class="edit"
+        mat-stroked-button
+        (click)="openDialog()"
+      >
         Edit User
       </button>
     </div>

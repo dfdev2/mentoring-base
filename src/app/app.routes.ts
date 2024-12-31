@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { TodosListComponent } from './components/todos/todos-list.component';
-import { PostsComponent } from './components/posts/posts.component';
+import { isAdminGuard } from './guards/admin.guard';
+import { AdminComponent } from './components/admin/admin.component';
 
 export const routes: Routes = [
   {
@@ -18,7 +19,8 @@ export const routes: Routes = [
     component: TodosListComponent,
   },
   {
-    path: 'posts',
-    component: PostsComponent,
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [isAdminGuard],
   },
 ];

@@ -27,7 +27,6 @@ import { RedHover } from '../../../directives/red-hover.directive';
     MatCardModule,
     MatButtonModule,
     MatButton,
-
     CleanPhone,
     ShadowHover,
     GreenHover,
