@@ -5,10 +5,11 @@
     </button>
 
     <ul class="todos__list">
-      <li *ngFor="let todoItem of todosServices.todosSubject$ | async">
+      <li *ngFor="let todoItem of todos$ | async">
         <app-todo
           [todoItem]="todoItem"
           (deleteTodo)="deleteTodo($event)"
+          (editTodo)="editTodo($event)"
         ></app-todo>
       </li>
     </ul>

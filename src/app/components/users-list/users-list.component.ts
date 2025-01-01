@@ -10,14 +10,16 @@ import { UsersApiService } from '../../services/users-api.service';
 import { User } from '../../interfaces/user.interface';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { UserCardComponent } from './user-card/user-card.component';
-import { UsersService } from '../../services/users.servece';
-import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
+import { CreateUserFormComponent } from './create-user-form/create-user-form.component';
 import { CreateUser } from '../../interfaces/createUser.interface';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 import { GreenHover } from '../../directives/green-hover.directive';
+import { Store } from '@ngrx/store';
+import { UsersActions } from './store/users.actions';
+import { selectUsers } from './store/users.selectors';
 
 @Component({
   selector: 'app-users-list',
@@ -36,36 +38,40 @@ import { GreenHover } from '../../directives/green-hover.directive';
 })
 export class UsersListComponent {
   readonly usersApiService = inject(UsersApiService);
-  readonly usersService = inject(UsersService);
   readonly createUserDialog = inject(MatDialog);
+  private readonly store = inject(Store);
+  private _snackBar = inject(MatSnackBar);
+  public readonly users$ = this.store.select(selectUsers);
 
   @Input()
   form!: CreateUser;
 
   @Output()
   readonly messege = new EventEmitter();
-
-  private _snackBar = inject(MatSnackBar);
   durationInSeconds = 2;
 
   constructor() {
     this.usersApiService.getUsers().subscribe((response: User[]) => {
-      this.usersService.setUsers(response);
+      this.store.dispatch(UsersActions.set({ users: response }));
     });
   }
 
   public deleteUser(deleteUser: User) {
-    this.usersService.deleteUser(deleteUser.id);
+    this.store.dispatch(UsersActions.delete({ id: deleteUser.id }));
     this.openSnackBar('User' + ' ' + deleteUser.name + ' ' + 'deleted');
   }
 
   public editUser(user: CreateUser) {
-    this.usersService.editUser({
-      ...user,
-      company: {
-        name: user.companyName,
-      },
-    });
+    this.store.dispatch(
+      UsersActions.edit({
+        user: {
+          ...user,
+          company: {
+            name: user.companyName,
+          },
+        },
+      })
+    );
     this.openSnackBar('User' + ' ' + user.name + ' ' + 'edited');
   }
 
@@ -74,17 +80,21 @@ export class UsersListComponent {
 
     dialogRef.afterClosed().subscribe((createResult: CreateUser) => {
       if (createResult) {
-        this.openSnackBar('User' + ' ' + createResult.name + ' ' + 'created');
-        this.usersService.createUser({
-          id: new Date().getTime(),
-          name: createResult.name,
-          email: createResult.email,
-          website: createResult.website,
-          company: {
-            name: createResult.companyName,
-          },
-        });
+        this.store.dispatch(
+          UsersActions.create({
+            user: {
+              id: new Date().getTime(),
+              name: createResult.name,
+              email: createResult.email,
+              website: createResult.website,
+              company: {
+                name: createResult.companyName,
+              },
+            },
+          })
+        );
       }
+      this.openSnackBar('User' + ' ' + createResult.name + ' ' + 'created');
     });
   }
 

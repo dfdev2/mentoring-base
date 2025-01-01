@@ -31,10 +31,16 @@
   }
 
   &__button {
-    background-color: blue;
     color: #fff;
     font-weight: 700;
     border-radius: rem(10);
-    padding: rem(5);
+    padding: rem(5) 0;
+    width: rem(95);
+    &._del {
+      background-color: #ea3f3f;
+    }
+    &._edit {
+      background-color: green;
+    }
   }
 }

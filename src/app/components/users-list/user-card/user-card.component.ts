@@ -13,7 +13,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { CreateUser } from '../../../interfaces/createUser.interface';
 import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
 import { MatCardModule } from '@angular/material/card';
-import { CleanPhone } from '../../pipes/cleanPhone.pipe';
+import { CleanPhone } from '../../../pipes/cleanPhone.pipe';
 import { ShadowHover } from '../../../directives/shadow-hover.directive';
 import { GreenHover } from '../../../directives/green-hover.directive';
 import { RedHover } from '../../../directives/red-hover.directive';
@@ -44,16 +44,12 @@ export class UserCardComponent {
   userItem!: User;
 
   @Output()
-  deleteUser = new EventEmitter();
-
-  @Output()
   editUser = new EventEmitter();
 
-  onDeleteUser(userId: number) {
-    this.deleteUser.emit(userId);
-  }
+  @Output()
+  deleteUser = new EventEmitter();
 
-  openDialog(): void {
+  onEditUser(): void {
     const dialogRef = this.editUserDialog.open(EditUserDialogComponent, {
       data: { user: this.userItem },
     });

@@ -16,7 +16,12 @@
       <span style="color: red">No</span>
     </ng-template>
   </div>
-  <button class="todo__button" (click)="onDeleteTodo(todoItem.id)">
-    Delete Todo
-  </button>
+  <div class="flex gap-3 justify-center">
+    <button class="todo__button _del" (click)="onDeleteTodoDialog()">
+      Delete Todo
+    </button>
+    <button class="todo__button _edit" (click)="onEditTodoDialog()">
+      Edit Todo
+    </button>
+  </div>
 </div>

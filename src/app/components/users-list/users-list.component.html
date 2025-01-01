@@ -11,7 +11,7 @@
       </button>
     </div>
     <ul class="flex justify-center flex-wrap gap-2 pt-6">
-      <li *ngFor="let item of usersService.usersSubject$ | async">
+      <li *ngFor="let item of users$ | async">
         <app-user-card
           [userItem]="item"
           (deleteUser)="deleteUser($event)"

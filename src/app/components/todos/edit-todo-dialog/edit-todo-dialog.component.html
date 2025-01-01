@@ -1,0 +1,28 @@
+<form [formGroup]="form" class="flex flex-col gap-2.5 p-4 w-80">
+  <mat-form-field appearance="fill">
+    <mat-label>Autor the task:</mat-label>
+    <input matInput formControlName="userId" />
+    <mat-error>Not correct</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Text of task:</mat-label>
+    <textarea matInput formControlName="title"></textarea>
+    <mat-error>Not correct</mat-error>
+  </mat-form-field>
+  <div>
+    <mat-label>Completed?</mat-label>
+    <mat-checkbox
+      (change)="(complated)"
+      formControlName="completed"
+    ></mat-checkbox>
+  </div>
+  <button
+    [mat-dialog-close]="todoWithUpdatedFields"
+    type="submit"
+    class="bg-gray-400 py-1 flex justify-center items-center text-white font-black disabled:bg-opacity-20"
+    [disabled]="form.invalid"
+    mat-stroked-button
+  >
+    Edit Task
+  </button>
+</form>

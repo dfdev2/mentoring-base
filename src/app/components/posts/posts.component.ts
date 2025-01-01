@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CleanPhone } from '../pipes/cleanPhone.pipe';
+import { CleanPhone } from '../../pipes/cleanPhone.pipe';
 
 @Component({
   selector: 'app-posts',

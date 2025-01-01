@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   Output,
+  inject,
 } from '@angular/core';
 import {
   FormControl,
@@ -17,11 +18,11 @@ import {
   MatLabel,
 } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIcon } from '@angular/material/icon';
-import { MatDialogClose } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import { Todo } from '../../../interfaces/todo.interface';
 
 @Component({
-  selector: 'app-create-task-form',
+  selector: 'app-edit-todo-dialog',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -30,34 +31,34 @@ import { MatDialogClose } from '@angular/material/dialog';
     MatLabel,
     MatFormFieldModule,
     MatCheckboxModule,
-    MatIcon,
     MatError,
     MatDialogClose,
   ],
-  templateUrl: './create-task-form.component.html',
-  styleUrl: './create-task-form.component.scss',
+  templateUrl: './edit-todo-dialog.component.html',
+  styleUrl: './edit-todo-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateTaskFormComponent {
-  @Output()
-  createTodo = new EventEmitter();
+export class EditTodoDialogComponent {
+  readonly data = inject<{ todo: Todo }>(MAT_DIALOG_DATA);
 
-  completed: boolean = false;
+  complated = this.data.todo.completed;
 
   public form = new FormGroup({
-    completed: new FormControl(this.completed),
-    title: new FormControl(null, [
+    completed: new FormControl(this.data.todo.completed),
+    title: new FormControl(this.data.todo.title, [
       Validators.required,
       Validators.minLength(5),
     ]),
-    userId: new FormControl(null, [
+    userId: new FormControl(this.data.todo.userId, [
       Validators.required,
       Validators.minLength(4),
     ]),
   });
 
-  public submitForm(): void {
-    this.createTodo.emit(this.form.value);
-    this.form.reset();
+  get todoWithUpdatedFields() {
+    return {
+      ...this.form.value,
+      id: this.data.todo.id,
+    };
   }
 }

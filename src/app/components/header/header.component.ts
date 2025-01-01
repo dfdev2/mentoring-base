@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { TodayDatePipe } from '../pipes/todayDate.pipe';
+import { TodayDatePipe } from '../../pipes/todayDate.pipe';
 import { YellowHover } from '../../directives/yellow-hover.directive';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AskDialogComponent } from '../admin/ask-dialog/ask-dialog.component';
